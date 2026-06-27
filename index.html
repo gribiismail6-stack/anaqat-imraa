@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>أناقة إمرأة</title>
+
+<link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+
+<header>
+    <h1>أناقة إمرأة</h1>
+    <p>أحدث موديلات الملابس النسائية</p>
+</header>
+
+<nav>
+    <a href="#">الرئيسية</a>
+    <a href="#products">المنتجات</a>
+    <a href="#order">اطلب الآن</a>
+</nav>
+
+<section class="hero">
+    <h2>مرحباً بك في متجر أناقة إمرأة</h2>
+    <p>تسوقي أجمل الملابس بأفضل الأسعار</p>
+</section>
+
+<section id="products">
+
+<div class="product">
+<img src="images/product1.jpg" alt="">
+<h3>بيجامة نسائية</h3>
+<p>السعر: 2500 دج</p>
+<button onclick="buy('بيجامة نسائية')">اطلب الآن</button>
+</div>
+
+<div class="product">
+<img src="images/product2.jpg" alt="">
+<h3>قميص نسائي</h3>
+<p>السعر: 1900 دج</p>
+<button onclick="buy('قميص نسائي')">اطلب الآن</button>
+</div>
+
+</section>
+
+<section id="order">
+
+<h2>تأكيد الطلب</h2>
+
+<form id="orderForm">
+
+<input type="text" placeholder="الاسم الكامل" required>
+
+<input type="tel" placeholder="رقم الهاتف" required>
+
+<input type="text" placeholder="الولاية" required>
+
+<input type="text" placeholder="البلدية" required>
+
+<textarea placeholder="العنوان الكامل"></textarea>
+
+<button type="submit">إرسال الطلب</button>
+
+</form>
+
+</section>
+
+<footer>
+
+<p>© 2026 جميع الحقوق محفوظة | أناقة إمرأة</p>
+
+</footer>
+
+<script src="script.js"></script>
+
+</body>
+</html>
