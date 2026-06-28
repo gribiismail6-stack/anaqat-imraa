@@ -184,20 +184,23 @@ button{
 </div>
 
 <script>
-document.getElementById("orderForm").addEventListener("submit", function(e){
-  e.preventDefault();
+document.getElementById("myForm").addEventListener("submit", function(e){
+    e.preventDefault();
 
-  document.getElementById("successBox").style.display = "block";
-  document.getElementById("orderForm").style.display = "none";
+    // إخفاء الفورم
+    this.style.display = "none";
+
+    // إظهار رسالة النجاح
+    let msg = document.getElementById("successMessage");
+    msg.style.display = "block";
+
+    // تختفي بعد 3 ثواني
+    setTimeout(() => {
+        msg.style.display = "none";
+        this.style.display = "block";
+        this.reset(); // يفرغ الحقول
+    }, 3000);
 });
-</script>
-<script>
-setTimeout(() => {
-  let msg = document.getElementById("successMessage");
-  if (msg) {
-    msg.style.display = "none";
-  }
-}, 3000);
 </script>
 </body>
 </html>
