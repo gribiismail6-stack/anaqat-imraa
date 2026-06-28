@@ -72,8 +72,12 @@
 <p>© 2026 جميع الحقوق محفوظة | أناقة إمرأة</p>
 
 </footer>
-
-<script src="script.js"></script>
-
+<script>
+document.getElementById("orderForm").addEventListener("submit", function(e) {
+    e.preventDefault();
+    alert("✅ تم إرسال طلبك بنجاح، شكراً لتسوقك من أناقة إمرأة ❤️");
+    this.reset();
+});
+</script>
 </body>
 </html>
