@@ -1,98 +1,66 @@
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
+
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>تأكيد الطلب</title>
+<title>استمارة الطلب</title>
 
 <style>
-
-/* ⭐ خلفية فخمة */
 body{
-  margin:0;
-  font-family:Arial;
-  direction:rtl;
-  background: linear-gradient(135deg, #0f0f0f, #1c1c1c, #3a3a3c);
-  min-height:100vh;
-  display:flex;
-  justify-content:center;
-  align-items:center;
+    font-family: Arial;
+    background:#f5f5f5;
+    margin:0;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    height:100vh;
 }
 
-/* ⭐ الصندوق */
 .container{
-  width:90%;
-  max-width:600px;
+    background:white;
+    padding:25px;
+    width:350px;
+    border-radius:15px;
+    box-shadow:0 0 15px rgba(0,0,0,0.1);
+    text-align:center;
 }
 
-/* ⭐ الفورم */
-form{
-  background:white;
-  padding:20px;
-  border-radius:15px;
-  box-shadow:0 10px 30px rgba(0,0,0,0.4);
-}
-
-/* ⭐ صف الحقول */
-.row{
-  display:flex;
-  gap:10px;
-  margin-bottom:10px;
-}
-
-/* ⭐ نفس الحجم */
 input, select{
-  flex:1;
-  padding:10px;
-  border:1px solid #ccc;
-  border-radius:8px;
-  font-size:14px;
-  box-sizing:border-box;
+    width:100%;
+    padding:10px;
+    margin:8px 0;
+    border:1px solid #ccc;
+    border-radius:8px;
+    font-size:14px;
 }
 
-/* ⭐ زر */
 button{
-  width:100%;
-  padding:12px;
-  border:none;
-  border-radius:10px;
-  background:black;
-  color:white;
-  font-size:16px;
-  cursor:pointer;
+    width:100%;
+    padding:10px;
+    background:black;
+    color:white;
+    border:none;
+    border-radius:8px;
+    cursor:pointer;
 }
 
-/* ⭐ رسالة النجاح */
-#successBox{
-  display:none;
-  text-align:center;
-  margin-bottom:10px;
-  padding:25px;
-  border-radius:15px;
-  background:#ffffff;
-  box-shadow:0 0 20px rgba(0,0,0,0.3);
+button:hover{
+    background:#333;
 }
 
-/* ⭐ دائرة نايك */
-.circle{
-  width:80px;
-  height:80px;
-  background:white;
-  border-radius:50%;
-  margin:auto;
-  display:flex;
-  justify-content:center;
-  align-items:center;
-  box-shadow:0 0 10px rgba(0,0,0,0.2);
+/* رسالة النجاح */
+#successMessage{
+    display:none;
+    margin-top:15px;
+    font-size:18px;
+    font-weight:bold;
+    color:green;
 }
 
-/* ⭐ علامة الصح */
-.check{
-  font-size:40px;
-  color:green;
-  font-weight:bold;
+.icon{
+    font-size:40px;
 }
-
 </style>
 
 </head>
@@ -101,85 +69,88 @@ button{
 
 <div class="container">
 
-<!-- ⭐ رسالة النجاح -->
-<div id="successBox">
-  <div class="circle">
-    <div class="check">✔</div>
-  </div>
-  <h2 style="color:green;margin-top:10px;">تمت العملية بنجاح</h2>
-  <p>شكراً لثقتك بنا ❤️</p>
-</div>
+<h2>تأكيد الطلب</h2>
 
-<form id="orderForm">
+<form id="myForm">
 
-<div class="row">
-  <input type="text" name="firstName" placeholder="الاسم" required>
-  <input type="text" name="lastName" placeholder="اللقب" required>
-</div>
+<input type="text" placeholder="الاسم الكامل" required>
+<input type="tel" placeholder="رقم الهاتف" required>
 
-<div class="row">
-  <input type="tel" name="phone" placeholder="رقم الهاتف" required>
-  <select id="wilaya" required>
-  <option value="">اختر الولاية</option>
-  <option>أدرار</option>
-  <option>الشلف</option>
-  <option>الأغواط</option>
-  <option>أم البواقي</option>
-  <option>باتنة</option>
-  <option>بجاية</option>
-  <option>بسكرة</option>
-  <option>بشار</option>
-  <option>البليدة</option>
-  <option>البويرة</option>
-  <option>تمنراست</option>
-  <option>تبسة</option>
-  <option>تلمسان</option>
-  <option>تيارت</option>
-  <option>تيزي وزو</option>
-  <option>الجزائر</option>
-  <option>الجلفة</option>
-  <option>جيجل</option>
-  <option>سطيف</option>
-  <option>سعيدة</option>
-  <option>سكيكدة</option>
-  <option>سيدي بلعباس</option>
-  <option>عنابة</option>
-  <option>قالمة</option>
-  <option>قسنطينة</option>
-  <option>المدية</option>
-  <option>مستغانم</option>
-  <option>المسيلة</option>
-  <option>معسكر</option>
-  <option>ورقلة</option>
-  <option>وهران</option>
-  <option>البيض</option>
-  <option>إليزي</option>
-  <option>برج بوعريريج</option>
-  <option>بومرداس</option>
-  <option>الطارف</option>
-  <option>تندوف</option>
-  <option>تيسمسيلت</option>
-  <option>الوادي</option>
-  <option>خنشلة</option>
-  <option>سوق أهراس</option>
-  <option>تيبازة</option>
-  <option>ميلة</option>
-  <option>عين الدفلى</option>
-  <option>النعامة</option>
-  <option>عين تموشنت</option>
-  <option>غرداية</option>
-  <option>غليزان</option>
+<select required>
+<option value="">اختر الولاية</option>
+<option>أدرار</option>
+<option>الشلف</option>
+<option>الأغواط</option>
+<option>أم البواقي</option>
+<option>باتنة</option>
+<option>بجاية</option>
+<option>بسكرة</option>
+<option>بشار</option>
+<option>البليدة</option>
+<option>البويرة</option>
+<option>تمنراست</option>
+<option>تبسة</option>
+<option>تلمسان</option>
+<option>تيارت</option>
+<option>تيزي وزو</option>
+<option>الجزائر</option>
+<option>الجلفة</option>
+<option>جيجل</option>
+<option>سطيف</option>
+<option>سعيدة</option>
+<option>سكيكدة</option>
+<option>سيدي بلعباس</option>
+<option>عنابة</option>
+<option>قالمة</option>
+<option>قسنطينة</option>
+<option>المدية</option>
+<option>مستغانم</option>
+<option>المسيلة</option>
+<option>معسكر</option>
+<option>ورقلة</option>
+<option>وهران</option>
+<option>البيض</option>
+<option>إليزي</option>
+<option>برج بوعريريج</option>
+<option>بومرداس</option>
+<option>الطارف</option>
+<option>تندوف</option>
+<option>تيسمسيلت</option>
+<option>الوادي</option>
+<option>خنشلة</option>
+<option>سوق أهراس</option>
+<option>تيبازة</option>
+<option>ميلة</option>
+<option>عين الدفلى</option>
+<option>النعامة</option>
+<option>عين تموشنت</option>
+<option>غرداية</option>
+<option>غليزان</option>
+<option>المغير</option>
+<option>المنيعة</option>
+<option>أولاد جلال</option>
+<option>بني عباس</option>
+<option>إن صالح</option>
+<option>إن قزام</option>
+<option>توقرت</option>
+<option>جانت</option>
+<option>المغير</option>
+<option>بني عباس</option>
+<option>المنيعة</option>
 </select>
-</div>
 
-<div class="row">
-  <input type="text" name="address" placeholder="العنوان الكامل" required>
-  <input type="number" name="quantity" placeholder="الكمية" required>
-</div>
+<input type="text" placeholder="العنوان الكامل" required>
+<input type="number" placeholder="الكمية" required>
 
-<button type="submit">تأكيد الطلب</button>
+<button type="submit">إرسال الطلب</button>
 
 </form>
+
+<!-- رسالة النجاح -->
+<div id="successMessage">
+<div class="icon">✔</div>
+تم إرسال الطلب بنجاح
+</div>
 
 </div>
 
@@ -187,20 +158,19 @@ button{
 document.getElementById("myForm").addEventListener("submit", function(e){
     e.preventDefault();
 
-    // إخفاء الفورم
     this.style.display = "none";
 
-    // إظهار رسالة النجاح
     let msg = document.getElementById("successMessage");
     msg.style.display = "block";
 
-    // تختفي بعد 3 ثواني
     setTimeout(() => {
         msg.style.display = "none";
         this.style.display = "block";
-        this.reset(); // يفرغ الحقول
+        this.reset();
     }, 3000);
 });
 </script>
+
 </body>
+
 </html>
