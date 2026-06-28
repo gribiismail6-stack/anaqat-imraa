@@ -73,10 +73,10 @@ button:hover{
 
 <form id="myForm">
 
-<input type="text" placeholder="الاسم الكامل" required>
-<input type="tel" placeholder="رقم الهاتف" required>
+<input type="text" id="name" placeholder="الاسم الكامل" required>
+<input type="tel" id="phone" placeholder="رقم الهاتف" required>
 
-<select required>
+<select id="wilaya" required>
 <option value="">اختر الولاية</option>
 <option>أدرار</option>
 <option>الشلف</option>
@@ -139,8 +139,8 @@ button:hover{
 <option>المنيعة</option>
 </select>
 
-<input type="text" placeholder="العنوان الكامل" required>
-<input type="number" placeholder="الكمية" required>
+<input type="text" id="address" placeholder="العنوان الكامل" required>
+<input type="number" id="quantity" placeholder="الكمية" required>
 
 <button type="submit">إرسال الطلب</button>
 
@@ -155,19 +155,35 @@ button:hover{
 </div>
 
 <script>
-document.getElementById("myForm").addEventListener("submit", function(e){
+const scriptURL = "https://script.google.com/macros/s/AKfycbwmoRbN_yGSQf69LNs3D3jxsT3leMSq19yq2glW79-mou41vAYXi8YVgvxQNDed2ISbZA/exec";
+
+document.getElementById("myForm").addEventListener("submit", function(e) {
     e.preventDefault();
 
-    this.style.display = "none";
+    fetch(scriptURL, {
+        method: "POST",
+        body: JSON.stringify({
+            name: document.getElementById("name").value,
+            phone: document.getElementById("phone").value,
+            wilaya: document.getElementById("wilaya").value,
+            address: document.getElementById("address").value,
+            quantity: document.getElementById("quantity").value
+        })
+    })
+    .then(() => {
+        this.style.display = "none";
+        let msg = document.getElementById("successMessage");
+        msg.style.display = "block";
 
-    let msg = document.getElementById("successMessage");
-    msg.style.display = "block";
-
-    setTimeout(() => {
-        msg.style.display = "none";
-        this.style.display = "block";
-        this.reset();
-    }, 3000);
+        setTimeout(() => {
+            msg.style.display = "none";
+            this.style.display = "block";
+            this.reset();
+        }, 3000);
+    })
+    .catch(() => {
+        alert("حدث خطأ أثناء إرسال الطلب.");
+    });
 });
 </script>
 
