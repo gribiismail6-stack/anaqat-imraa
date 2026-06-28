@@ -6,103 +6,55 @@
 <title>أناقة إمرأة</title>
 
 <link rel="stylesheet" href="style.css">
-
 </head>
 
 <body>
 
-<header>
-    <h1>أناقة إمرأة</h1>
-    <p>أحدث موديلات الملابس النسائية</p>
-</header>
-
-<nav>
-    <a href="#">الرئيسية</a>
-    <a href="#products">المنتجات</a>
-    <a href="#order">اطلب الآن</a>
-</nav>
-
-<section class="hero">
-    <h2>مرحباً بك في متجر أناقة إمرأة</h2>
-    <p>تسوقي أجمل الملابس بأفضل الأسعار</p>
-</section>
-
-<section id="products">
-
-<div class="product">
-<img src="images/product1.jpg" alt="">
-<h3>بيجامة نسائية</h3>
-<p>السعر: 2500 دج</p>
-<button onclick="buy('بيجامة نسائية')">اطلب الآن</button>
-</div>
-
-<div class="product">
-<img src="images/product2.jpg" alt="">
-<h3>قميص نسائي</h3>
-<p>السعر: 1900 دج</p>
-<button onclick="buy('قميص نسائي')">اطلب الآن</button>
-</div>
-
-</section>
-
 <section id="order">
 
-<h2>تأكيد الطلب</h2>
+  <h2>أناقة إمرأة</h2>
 
-<form id="orderForm">
+  <p class="price">السعر: 3500 دج</p>
 
-<div id="successMessage" style="display:none;text-align:center;margin:20px 0;">
+  <form id="orderForm">
 
-    <div style="
-        width:110px;
-        height:110px;
-        border:4px solid #16a34a;
-        border-radius:50%;
-        margin:0 auto 15px;
-        display:flex;
-        align-items:center;
-        justify-content:center;
-        font-size:60px;
-        color:#16a34a;
-        font-weight:bold;
-    ">
-        ✓
-    </div>
+    <input type="text" id="name" placeholder="الاسم الكامل" required>
 
-    <h2 style="color:#16a34a;">تم إرسال طلبك بنجاح</h2>
+    <input type="tel" id="phone" placeholder="رقم الهاتف" required>
 
-    <p>شكراً لتسوقك من <strong>أناقة إمرأة</strong> ❤️</p>
+    <select id="wilaya" required>
+      <option value="">اختر الولاية</option>
+      <option>الجزائر</option>
+      <option>وهران</option>
+      <option>قسنطينة</option>
+      <option>سطيف</option>
+      <option>البليدة</option>
+      <option>عنابة</option>
+    </select>
 
+    <button type="submit">إرسال الطلب</button>
+
+ </form>
+
+<div id="successMessage" class="success-box">
+  <div class="checkmark">✔</div>
+  <h3>تم بنجاح</h3>
+  <p>تم إرسال طلبك بنجاح، شكراً لتسوقك من أناقة إمرأة ❤️</p>
 </div>
 
-<input type="text" placeholder="الاسم الكامل" required>
-
-<input type="tel" placeholder="رقم الهاتف" required>
-
-<input type="text" placeholder="الولاية" required>
-
-<input type="text" placeholder="البلدية" required>
-
-<textarea placeholder="العنوان الكامل"></textarea>
-
-<button type="submit">إرسال الطلب</button>
-
-</form>
 </section>
 
-<footer>
-
-<p>© 2026 جميع الحقوق محفوظة | أناقة إمرأة</p>
-
-</footer>
 <script>
 document.getElementById("orderForm").addEventListener("submit", function(e) {
-    e.preventDefault();
+  e.preventDefault();
 
-    document.getElementById("successMessage").style.display = "block";
+  // إظهار رسالة النجاح
+  document.getElementById("successMessage").style.display = "block";
 
-    this.reset();
+  // تفريغ الحقول
+  document.getElementById("orderForm").reset();
 });
 </script>
+
 </body>
 </html>
