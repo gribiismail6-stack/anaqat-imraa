@@ -48,11 +48,18 @@
 document.getElementById("orderForm").addEventListener("submit", function(e) {
   e.preventDefault();
 
-  // إظهار رسالة النجاح
-  document.getElementById("successMessage").style.display = "block";
+  let msg = document.getElementById("successMessage");
+
+  // إظهار رسالة النجاح فقط بعد الضغط على إرسال
+  msg.style.display = "block";
 
   // تفريغ الحقول
-  document.getElementById("orderForm").reset();
+  this.reset();
+
+  // إخفاء الرسالة بعد 4 ثواني
+  setTimeout(() => {
+    msg.style.display = "none";
+  }, 4000);
 });
 </script>
 
