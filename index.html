@@ -3,27 +3,123 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>أناقة إمرأة</title>
+<title>تأكيد الطلب</title>
 
-<link rel="stylesheet" href="style.css">
+<style>
+
+/* ⭐ خلفية فخمة */
+body{
+  margin:0;
+  font-family:Arial;
+  direction:rtl;
+  background: linear-gradient(135deg, #0f0f0f, #1c1c1c, #3a3a3c);
+  min-height:100vh;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+}
+
+/* ⭐ الصندوق */
+.container{
+  width:90%;
+  max-width:600px;
+}
+
+/* ⭐ الفورم */
+form{
+  background:white;
+  padding:20px;
+  border-radius:15px;
+  box-shadow:0 10px 30px rgba(0,0,0,0.4);
+}
+
+/* ⭐ صف الحقول */
+.row{
+  display:flex;
+  gap:10px;
+  margin-bottom:10px;
+}
+
+/* ⭐ نفس الحجم */
+input, select{
+  flex:1;
+  padding:10px;
+  border:1px solid #ccc;
+  border-radius:8px;
+  font-size:14px;
+  box-sizing:border-box;
+}
+
+/* ⭐ زر */
+button{
+  width:100%;
+  padding:12px;
+  border:none;
+  border-radius:10px;
+  background:black;
+  color:white;
+  font-size:16px;
+  cursor:pointer;
+}
+
+/* ⭐ رسالة النجاح */
+#successBox{
+  display:none;
+  text-align:center;
+  margin-bottom:10px;
+  padding:25px;
+  border-radius:15px;
+  background:#ffffff;
+  box-shadow:0 0 20px rgba(0,0,0,0.3);
+}
+
+/* ⭐ دائرة نايك */
+.circle{
+  width:80px;
+  height:80px;
+  background:white;
+  border-radius:50%;
+  margin:auto;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  box-shadow:0 0 10px rgba(0,0,0,0.2);
+}
+
+/* ⭐ علامة الصح */
+.check{
+  font-size:40px;
+  color:green;
+  font-weight:bold;
+}
+
+</style>
+
 </head>
 
 <body>
 
-<section id="order">
+<div class="container">
 
-  <h2>أناقة إمرأة</h2>
+<!-- ⭐ رسالة النجاح -->
+<div id="successBox">
+  <div class="circle">
+    <div class="check">✔</div>
+  </div>
+  <h2 style="color:green;margin-top:10px;">تمت العملية بنجاح</h2>
+  <p>شكراً لثقتك بنا ❤️</p>
+</div>
 
-  <p class="price">السعر: 3500 دج</p>
+<form id="orderForm">
 
-  <form id="orderForm">
+<div class="row">
+  <input type="text" name="firstName" placeholder="الاسم" required>
+  <input type="text" name="lastName" placeholder="اللقب" required>
+</div>
 
-    <input type="text" id="name" placeholder="الاسم الكامل" required>
-
-    <input type="tel" id="phone" placeholder="رقم الهاتف" required>
-
-<input type="text" id="address" placeholder="العنوان الكامل (الحي، الشارع...)" required>
-    <select id="wilaya" required>
+<div class="row">
+  <input type="tel" name="phone" placeholder="رقم الهاتف" required>
+  <select id="wilaya" required>
   <option value="">اختر الولاية</option>
   <option>أدرار</option>
   <option>الشلف</option>
@@ -74,36 +170,25 @@
   <option>غرداية</option>
   <option>غليزان</option>
 </select>
-   
-
-    <button type="submit">إرسال الطلب</button>
-
- </form>
-
-<div id="successMessage" class="success-box">
-  <div class="checkmark">✔</div>
-  <h3>تم بنجاح</h3>
-  <p>تم إرسال طلبك بنجاح، شكراً لتسوقك من أناقة إمرأة ❤️</p>
 </div>
 
-</section>
+<div class="row">
+  <input type="text" name="address" placeholder="العنوان الكامل" required>
+  <input type="number" name="quantity" placeholder="الكمية" required>
+</div>
+
+<button type="submit">تأكيد الطلب</button>
+
+</form>
+
+</div>
 
 <script>
-document.getElementById("orderForm").addEventListener("submit", function(e) {
+document.getElementById("orderForm").addEventListener("submit", function(e){
   e.preventDefault();
 
-  let msg = document.getElementById("successMessage");
-
-  // إظهار رسالة النجاح فقط بعد الضغط على إرسال
-  msg.style.display = "block";
-
-  // تفريغ الحقول
-  this.reset();
-
-  // إخفاء الرسالة بعد 4 ثواني
-  setTimeout(() => {
-    msg.style.display = "none";
-  }, 4000);
+  document.getElementById("successBox").style.display = "block";
+  document.getElementById("orderForm").style.display = "none";
 });
 </script>
 
