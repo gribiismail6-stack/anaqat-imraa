@@ -75,7 +75,9 @@
 <script>
 document.getElementById("orderForm").addEventListener("submit", function(e) {
     e.preventDefault();
-    alert("✅ تم إرسال طلبك بنجاح، شكراً لتسوقك من أناقة إمرأة ❤️");
+
+    document.getElementById("successMessage").style.display = "block";
+
     this.reset();
 });
 </script>
