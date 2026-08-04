@@ -142,18 +142,29 @@ address: document.getElementById("address").value,
 quantity: document.getElementById("quantity").value
 
 };
-
-
 fetch("https://script.google.com/macros/s/AKfycbw4NNsXr8V4mjd-RzQVGpJJGgbukYESFjtmYGoOZ3rPd0m4eWrfK8jZZDdC9ZStfXHq/exec", {
+    method: "POST",
+    body: JSON.stringify(data)
+})
+.then(response => response.text())
+.then(() => {
 
-method:"POST",
+    let msg = document.getElementById("successMessage");
 
-body: JSON.stringify(data)
+    msg.style.display = "block";
+    msg.innerHTML = "✅ تم إرسال طلبك بنجاح";
+
+    document.getElementById("orderForm").reset();
+
+    setTimeout(() => {
+        msg.style.display = "none";
+    }, 3000);
 
 })
-
-
-.then(() => {
+.catch(error => {
+    alert("حدث خطأ أثناء إرسال الطلب");
+    console.log(error);
+});
 
 document.getElementById("successMessage").style.display="block";
 
