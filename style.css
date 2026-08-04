@@ -309,3 +309,40 @@ footer{
     font-size:18px;
     font-weight:bold;
 }
+/* ترتيب وتصغير استمارة الطلب */
+
+#order{
+    width:90%;
+    max-width:450px;
+    margin:40px auto;
+    padding:20px;
+    background:#fff;
+    border-radius:15px;
+    box-shadow:0 5px 20px rgba(0,0,0,0.1);
+}
+
+#order h2{
+    font-size:24px;
+    text-align:center;
+    margin-bottom:20px;
+}
+
+#order form{
+    display:flex;
+    flex-direction:column;
+    gap:12px;
+}
+
+#order input,
+#order select{
+    height:45px;
+    padding:10px;
+    font-size:15px;
+    border-radius:8px;
+}
+
+#order button{
+    height:45px;
+    font-size:17px;
+    border-radius:8px;
+}
