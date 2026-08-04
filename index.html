@@ -164,3 +164,140 @@ background:#c2185b;
 </nav>
 
 </header>
+<!-- القسم الرئيسي -->
+<section class="hero">
+    <h1>أناقة إمرأة</h1>
+    <p>اكتشفي أجمل الأزياء النسائية بتصاميم عصرية</p>
+    <button onclick="document.getElementById('order').scrollIntoView()">
+        اطلبي الآن
+    </button>
+</section>
+
+
+<!-- المنتجات -->
+<section class="products">
+
+<h2>منتجاتنا</h2>
+
+<div class="product-card">
+
+<h3>بيجامة نسائية</h3>
+
+<p>أناقة وراحة بتصميم مميز</p>
+
+<p class="price">2500 دج</p>
+
+<button onclick="buy('بيجامة نسائية')">
+اطلبي الآن
+</button>
+
+</div>
+
+</section>
+
+
+<!-- استمارة الطلب -->
+<section id="order">
+
+<h2>تأكيد الطلب</h2>
+
+<form id="orderForm">
+
+<input type="text" id="name" placeholder="الإسم الكامل" required>
+
+<input type="tel" id="phone" placeholder="رقم الهاتف" required>
+
+
+<select id="wilaya" required>
+<option value="">اختر الولاية</option>
+<option>الشلف</option>
+<option>الجزائر</option>
+<option>وهران</option>
+<option>قسنطينة</option>
+<option>سطيف</option>
+</select>
+
+
+<input type="text" id="address" placeholder="العنوان كامل" required>
+
+
+<input type="number" id="quantity" value="1" min="1">
+
+
+<input type="hidden" id="product">
+
+
+<button type="submit">
+إرسال الطلب
+</button>
+
+
+</form>
+
+<div id="successMessage"></div>
+
+</section>
+
+
+<script>
+
+function buy(productName){
+
+document.getElementById("product").value = productName;
+
+document.getElementById("order").scrollIntoView();
+
+}
+
+
+document.getElementById("orderForm").addEventListener("submit", function(e){
+
+e.preventDefault();
+
+
+let data = {
+
+name: document.getElementById("name").value,
+
+phone: document.getElementById("phone").value,
+
+wilaya: document.getElementById("wilaya").value,
+
+address: document.getElementById("address").value,
+
+quantity: document.getElementById("quantity").value
+
+};
+
+
+fetch("ضع_رابط_Google_Script_هنا", {
+
+method:"POST",
+
+body: JSON.stringify(data)
+
+})
+
+
+.then(response => response.json())
+
+.then(result => {
+
+
+document.getElementById("successMessage").innerHTML =
+"✅ تم إرسال طلبك بنجاح<br>رقم الطلب: " + result.order;
+
+
+document.getElementById("orderForm").reset();
+
+
+});
+
+
+});
+
+</script>
+
+
+</body>
+</html>
