@@ -123,11 +123,41 @@ nav a:hover{
 /* استمارة الطلب */
 
 .order-box{
+    width:90%;
+    max-width:500px;
+    margin:50px auto;
     background:#fff;
-    margin-top:50px;
-    padding:30px;
-    border-radius:20px;
-    box-shadow:0 8px 25px rgba(0,0,0,.1);
+    padding:25px;
+    border-radius:18px;
+    box-shadow:0 5px 20px rgba(0,0,0,.12);
+}
+
+.order-box h2{
+    text-align:center;
+    color:#e91e63;
+    margin-bottom:20px;
+}
+
+.order-box form input,
+.order-box form select{
+    width:100%;
+    height:50px;
+    margin-bottom:15px;
+    padding:12px;
+    border-radius:10px;
+    border:1px solid #ddd;
+    font-size:16px;
+}
+
+.order-box button{
+    width:100%;
+    height:50px;
+    background:#e91e63;
+    color:white;
+    border:none;
+    border-radius:10px;
+    font-size:18px;
+    font-weight:bold;
 }
 
 .order-box h2{
