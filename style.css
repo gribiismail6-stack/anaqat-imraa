@@ -346,3 +346,37 @@ footer{
     font-size:17px;
     border-radius:8px;
 }
+#order {
+    display:block !important;
+    width:90% !important;
+    max-width:450px !important;
+    margin:40px auto !important;
+    padding:20px !important;
+    background:#ffffff !important;
+    border-radius:15px !important;
+}
+
+#order form {
+    width:100% !important;
+    display:flex !important;
+    flex-direction:column !important;
+    gap:12px !important;
+}
+
+#order input,
+#order select {
+    width:100% !important;
+    height:45px !important;
+    font-size:16px !important;
+    padding:10px !important;
+    margin:0 !important;
+}
+
+#order button {
+    width:100% !important;
+    height:45px !important;
+    background:#e91e63 !important;
+    color:white !important;
+    border:none !important;
+    border-radius:10px !important;
+}
