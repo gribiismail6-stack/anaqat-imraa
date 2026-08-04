@@ -279,17 +279,14 @@ body: JSON.stringify(data)
 })
 
 
-.then(response => response.json())
+.then(() => {
 
-.then(result => {
-
+document.getElementById("successMessage").style.display="block";
 
 document.getElementById("successMessage").innerHTML =
-"✅ تم إرسال طلبك بنجاح<br>رقم الطلب: " + result.order;
-
+"✅ تم إرسال طلبك بنجاح";
 
 document.getElementById("orderForm").reset();
-
 
 });
 
