@@ -146,7 +146,7 @@ fetch("https://script.google.com/macros/s/AKfycbw4NNsXr8V4mjd-RzQVGpJJGgbukYESFj
     method: "POST",
     body: JSON.stringify(data)
 })
-.then(response => response.text())
+mode: "no-cors"
 .then(() => {
 
     let msg = document.getElementById("successMessage");
