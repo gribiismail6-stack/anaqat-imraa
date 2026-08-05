@@ -113,57 +113,49 @@ border-radius:15px;">
 
 </section>
 
-
 <script>
 
 function buy(productName){
-
-document.getElementById("product").value = productName;
-
-document.getElementById("order").scrollIntoView();
-
+    document.getElementById("product").value = productName;
+    document.getElementById("order").scrollIntoView();
 }
-
 
 document.getElementById("orderForm").addEventListener("submit", function(e){
 
-e.preventDefault();
+    e.preventDefault();
 
+    let data = {
+        name: document.getElementById("name").value,
+        phone: document.getElementById("phone").value,
+        wilaya: document.getElementById("wilaya").value,
+        address: document.getElementById("address").value,
+        quantity: document.getElementById("quantity").value
+    };
 
-let data = {
+    fetch("https://script.google.com/macros/s/AKfycbw4NNsXr8V4mjd-RzQVGpJJGgbukYESFjtmYGoOZ3rPd0m4eWrfK8jZZDdC9ZStfXHq/exec", {
+        method: "POST",
+        mode: "no-cors",
+        body: JSON.stringify(data)
+    })
+    .then(() => {
 
-name: document.getElementById("name").value,
+        let msg = document.getElementById("successMessage");
+        msg.innerHTML = "✅ تم إرسال طلبك بنجاح<br>سنتصل بك قريبًا.";
+        msg.style.display = "block";
 
-phone: document.getElementById("phone").value,
+        document.getElementById("orderForm").reset();
 
-wilaya: document.getElementById("wilaya").value,
+        setTimeout(() => {
+            msg.style.display = "none";
+        }, 3000);
 
-address: document.getElementById("address").value,
+    })
+    .catch(() => {
+        alert("حدث خطأ أثناء إرسال الطلب.");
+    });
 
-quantity: document.getElementById("quantity").value
-
-};
-fetch("https://script.google.com/macros/s/AKfycbw4NNsXr8V4mjd-RzQVGpJJGgbukYESFjtmYGoOZ3rPd0m4eWrfK8jZZDdC9ZStfXHq/exec", {
-    method: "POST",
-    body: JSON.stringify(data)
-})
-mode: "no-cors"
-.then(() => {
-
-    let msg = document.getElementById("successMessage");
-
-    msg.style.display = "block";
-    
-
-    document.getElementById("orderForm").reset();
-
-    setTimeout(() => {
-        msg.style.display = "none";
-    }, 3000);
-
-})
- 
 });
+
 </script>
 
 
