@@ -1,223 +1,223 @@
-/* ===== إعدادات عامة ===== */
-
 *{
     margin:0;
     padding:0;
     box-sizing:border-box;
-    font-family:'Cairo',sans-serif;
+    font-family:"Cairo", sans-serif;
 }
 
 body{
-    background:#fff5f8;
-    color:#333;
     direction:rtl;
-    line-height:1.7;
-}
-
-img{
-    max-width:100%;
-    display:block;
-}
-
-a{
-    text-decoration:none;
-}
-
-/* ===== الهيدر الجديد ===== */
-
-header{
-    position:sticky;
-    top:0;
-    z-index:1000;
     background:#fff;
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
-    padding:12px 18px;
-    box-shadow:0 3px 12px rgba(0,0,0,.08);
+    color:#333;
 }
 
-.logo h1{
-    color:#e91e63;
-    font-size:28px;
-    margin:0;
-    line-height:1;
-}
 
-.logo span{
-    color:#777;
-    font-size:13px;
-}
-
-nav{
-    display:flex;
-    gap:18px;
-}
-
-nav a{
-    color:#444;
-    font-size:17px;
-    font-weight:700;
-    transition:.3s;
-}
-
-nav a:hover{
-    color:#e91e63;
-}
-
-@media (max-width:768px){
-
-header{
-    flex-direction:column;
-    gap:10px;
-}
-
-nav{
-    width:100%;
-    justify-content:space-around;
-    flex-wrap:wrap;
-}
-
-nav a{
-    font-size:15px;
-}
-}
-
-.thumbs{
-    display:flex;
-    flex-direction:column;
-    gap:10px;
-}
-
-.thumbs img{
-    width:80px;
-    height:100px;
-    object-fit:cover;
-    border-radius:10px;
-    cursor:pointer;
-    border:2px solid transparent;
-    transition:.3s;
-}
-
-.thumbs img:hover{
-    border-color:#e91e63;
-}
-
-.main-image img{
-    border-radius:18px;
-    box-shadow:0 10px 25px rgba(0,0,0,.15);
-}
-
-.info h1{
-    font-size:42px;
-    margin-bottom:10px;
-}
-
-.price{
-    color:#e91e63;
-    font-size:36px;
-    font-weight:bold;
-    margin:20px 0;
-}
-
-.old-price{
-    color:#999;
-    text-decoration:line-through;
-    margin-right:10px;
-}
-/* ===== استمارة الطلب ===== */
-
-.order-box,
-#order{
-    width:90%;
-    max-width:500px;
-    margin:50px auto;
-    background:#fff;
-    padding:25px;
-    border-radius:18px;
-    box-shadow:0 5px 20px rgba(0,0,0,.12);
-}
-
-.order-box h2,
-#order h2{
+.header{
     text-align:center;
-    color:#e91e63;
-    margin-bottom:20px;
-    font-size:28px;
+    padding:30px 15px;
+    background:#f8e6ea;
 }
 
-#order form{
+.header h1{
+    font-size:40px;
+    color:#b8860b;
+}
+
+.header p{
+    margin-top:10px;
+    font-size:18px;
+}
+
+
+nav{
+    display:flex;
+    justify-content:center;
+    gap:25px;
+    padding:15px;
+    background:white;
+}
+
+nav a{
+    text-decoration:none;
+    color:#333;
+    font-weight:bold;
+}
+
+
+
+.hero{
+    text-align:center;
+    padding:20px;
+}
+
+.hero img{
+    width:90%;
+    max-width:600px;
+    border-radius:20px;
+}
+
+.hero h2{
+    margin:20px;
+}
+
+
+button{
+    background:#b8860b;
+    color:white;
+    border:none;
+    padding:12px 30px;
+    border-radius:25px;
+    cursor:pointer;
+    font-size:16px;
+}
+
+
+
+#products{
+    padding:30px 15px;
+}
+
+
+#products h2,
+.about h2,
+.contact h2,
+.order-box h2{
+    text-align:center;
+    margin-bottom:25px;
+}
+
+
+
+.products-slider{
+    display:flex;
+    gap:20px;
+    overflow-x:auto;
+    scroll-behavior:smooth;
+    padding-bottom:15px;
+}
+
+
+.products-slider::-webkit-scrollbar{
+    display:none;
+}
+
+
+.product-card{
+    min-width:260px;
+    background:white;
+    border-radius:20px;
+    box-shadow:0 5px 15px #ddd;
+    padding:15px;
+    text-align:center;
+}
+
+
+.product-card img{
+    width:100%;
+    border-radius:15px;
+}
+
+
+.product-card h3{
+    margin:15px 0;
+}
+
+
+
+.about,
+.contact{
+    padding:30px 20px;
+    text-align:center;
+    line-height:2;
+}
+
+
+
+.order-box{
+    margin:20px;
+    padding:25px;
+    border-radius:20px;
+    box-shadow:0 5px 20px #ddd;
+    position:relative;
+}
+
+
+
+#productImage{
+    display:block;
+    width:250px;
+    max-width:90%;
+    margin:0 auto 20px;
+    border-radius:15px;
+}
+
+
+
+form{
     display:flex;
     flex-direction:column;
     gap:15px;
 }
 
-#order input,
-#order select{
-    width:100%;
-    height:50px;
-    padding:12px;
+
+input,
+select{
+    padding:15px;
+    border-radius:12px;
     border:1px solid #ddd;
-    border-radius:10px;
     font-size:16px;
-    outline:none;
-    transition:.3s;
 }
 
-#order input:focus,
-#order select:focus{
-    border-color:#e91e63;
+
+form button{
+    margin-top:10px;
 }
 
-#order button{
-    width:100%;
-    height:50px;
-    background:#e91e63;
-    color:#fff;
-    border:none;
-    border-radius:10px;
-    font-size:18px;
-    font-weight:bold;
-    cursor:pointer;
-    transition:.3s;
-}
 
-#order button:hover{
-    background:#c2185b;
-}
-
-/* ===== رسالة النجاح ===== */
 
 #successMessage{
+
     display:none;
-    margin-top:20px;
-    padding:20px;
-    background:#e8ffe8;
-    color:#28a745;
+
+    position:fixed;
+
+    top:50%;
+    left:50%;
+
+    transform:translate(-50%,-50%);
+
+    background:white;
+
+    padding:30px;
+
+    border-radius:20px;
+
+    box-shadow:0 5px 30px #aaa;
+
     text-align:center;
-    border-radius:15px;
+
     font-size:20px;
-    font-weight:bold;
+
+    color:green;
+
+    z-index:999;
+
 }
 
-/* ===== الفوتر ===== */
 
-footer{
-    margin-top:
 
-.buy-btn{
-    width:100%;
-    padding:16px;
-    border:none;
-    border-radius:12px;
-    background:#e91e63;
-    color:#fff;
-    font-size:20px;
-    font-weight:bold;
-    cursor:pointer;
-    transition:.3s;
+@media(max-width:600px){
+
+.header h1{
+    font-size:32px;
 }
 
-.buy-btn:hover{
-    background:#c2185b;
+nav{
+    gap:10px;
+}
+
+.product-card{
+    min-width:230px;
+}
+
 }
