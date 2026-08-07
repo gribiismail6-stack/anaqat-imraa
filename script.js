@@ -19,9 +19,10 @@ form.addEventListener("submit", function(e){
 
 
     fetch(scriptURL, {
-        method: "POST",
-        body: JSON.stringify(data)
-    })
+    method: "POST",
+    mode: "no-cors",
+    body: JSON.stringify(data)
+})
 
     .then(() => {
 
