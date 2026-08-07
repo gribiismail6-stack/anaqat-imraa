@@ -134,3 +134,267 @@ transition:.3s;
 background:#c2185b;
 transform:scale(1.05);
 }
+/*==========================
+  عنوان الأقسام
+==========================*/
+
+.section-title{
+text-align:center;
+font-size:32px;
+color:#e91e63;
+margin:60px 0 30px;
+font-weight:800;
+}
+
+/*==========================
+  قسم المنتجات
+==========================*/
+
+.products-slider{
+display:flex;
+gap:20px;
+overflow-x:auto;
+padding:15px;
+scroll-behavior:smooth;
+-webkit-overflow-scrolling:touch;
+}
+
+.products-slider::-webkit-scrollbar{
+display:none;
+}
+
+.product-card{
+min-width:270px;
+max-width:270px;
+background:#fff;
+border-radius:20px;
+overflow:hidden;
+box-shadow:0 8px 20px rgba(0,0,0,.08);
+transition:.3s;
+flex-shrink:0;
+}
+
+.product-card:hover{
+transform:translateY(-8px);
+}
+
+.product-card img{
+width:100%;
+height:300px;
+object-fit:cover;
+display:block;
+}
+
+.product-card h3{
+padding:15px 15px 5px;
+font-size:22px;
+text-align:center;
+}
+
+.product-card .stars{
+text-align:center;
+margin:5px 0;
+}
+
+.product-card .price{
+text-align:center;
+margin-bottom:15px;
+}
+
+.product-card button{
+width:90%;
+margin:15px auto 20px;
+display:block;
+border:none;
+background:#e91e63;
+color:#fff;
+padding:14px;
+border-radius:40px;
+font-size:18px;
+font-weight:bold;
+cursor:pointer;
+transition:.3s;
+}
+
+.product-card button:hover{
+background:#c2185b;
+transform:scale(1.03);
+}
+/*==========================
+   من نحن
+==========================*/
+
+.about-box{
+max-width:900px;
+margin:0 auto;
+background:#fff;
+padding:30px;
+border-radius:20px;
+box-shadow:0 5px 15px rgba(0,0,0,.08);
+text-align:center;
+font-size:18px;
+line-height:2;
+}
+
+/*==========================
+   اتصل بنا
+==========================*/
+
+.contact-box{
+display:flex;
+justify-content:center;
+gap:20px;
+flex-wrap:wrap;
+margin-bottom:50px;
+}
+
+.contact-btn{
+text-decoration:none;
+padding:15px 35px;
+border-radius:40px;
+font-size:18px;
+font-weight:bold;
+color:#fff;
+transition:.3s;
+}
+
+.facebook{
+background:#1877f2;
+}
+
+.whatsapp{
+background:#25d366;
+}
+
+.contact-btn:hover{
+transform:scale(1.05);
+}
+
+/*==========================
+   استمارة الطلب
+==========================*/
+
+.order{
+padding:20px;
+}
+
+#orderForm{
+max-width:650px;
+margin:30px auto;
+background:#fff;
+padding:30px;
+border-radius:20px;
+box-shadow:0 8px 20px rgba(0,0,0,.08);
+}
+
+#orderForm input,
+#orderForm select{
+width:100%;
+padding:15px;
+margin-bottom:18px;
+border:1px solid #ddd;
+border-radius:12px;
+font-size:16px;
+font-family:'Cairo',sans-serif;
+}
+
+.submit-btn{
+width:100%;
+padding:16px;
+border:none;
+border-radius:12px;
+background:#e91e63;
+color:#fff;
+font-size:20px;
+font-weight:bold;
+cursor:pointer;
+transition:.3s;
+}
+
+.submit-btn:hover{
+background:#c2185b;
+}
+/*==========================
+  رسالة النجاح
+==========================*/
+
+.success-message{
+display:none;
+margin-top:20px;
+padding:15px;
+background:#d4edda;
+color:#155724;
+border-radius:12px;
+text-align:center;
+font-size:18px;
+font-weight:bold;
+animation:fadeIn .4s;
+}
+
+@keyframes fadeIn{
+from{
+opacity:0;
+transform:translateY(10px);
+}
+to{
+opacity:1;
+transform:translateY(0);
+}
+}
+
+/*==========================
+  Responsive
+==========================*/
+
+@media (max-width:768px){
+
+header{
+flex-direction:column;
+gap:15px;
+padding:15px;
+}
+
+nav{
+width:100%;
+justify-content:center;
+flex-wrap:wrap;
+gap:15px;
+}
+
+.hero{
+flex-direction:column;
+padding:15px;
+}
+
+.hero-content h2{
+font-size:28px;
+text-align:center;
+}
+
+.hero-content{
+text-align:center;
+}
+
+.btn{
+width:100%;
+text-align:center;
+}
+
+.product-card{
+min-width:240px;
+max-width:240px;
+}
+
+.section-title{
+font-size:28px;
+}
+
+.logo h1{
+font-size:24px;
+}
+
+.logo p{
+font-size:13px;
+}
+
+}
