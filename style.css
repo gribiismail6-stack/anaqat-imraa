@@ -319,7 +319,7 @@ background:#c2185b;
 ==========================*/
 
 .success-message{
-display:block;
+display:none;
 text-align:center;
 margin-top:20px;
 padding:15px;
