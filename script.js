@@ -17,30 +17,23 @@ form.addEventListener("submit", function(e) {
 
 
     fetch(scriptURL, {
-        method: "POST",
-        body: JSON.stringify(data)
-    })
+  method: "POST",
+  body: JSON.stringify(data)
+})
+.then(() => {
 
-    .then(response => response.json())
+    let msg = document.getElementById("successMessage");
 
-    .then(result => {
+    msg.style.display = "block";
+    msg.innerHTML = "✅ تم إرسال طلبك بنجاح";
 
-        successMessage.style.display = "block";
-        successMessage.innerHTML = "✅ تم إرسال طلبك بنجاح";
+    form.reset();
 
-        form.reset();
+    setTimeout(() => {
+        msg.style.display = "none";
+    }, 4000);
 
-        setTimeout(function(){
-            successMessage.style.display = "none";
-        }, 4000);
-
-    })
-
-    .catch(error => {
-
-        console.log("Error:", error);
-        alert("حدث خطأ أثناء إرسال الطلب");
-
-    });
-
+})
+.catch(error => {
+    console.log(error);
 });
