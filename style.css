@@ -405,3 +405,22 @@ font-size:13px;
 }
 
 }
+
+#successMessage{
+    display:none;
+    position:fixed !important;
+    top:50% !important;
+    left:50% !important;
+    transform:translate(-50%,-50%) !important;
+    width:90% !important;
+    max-width:400px;
+    text-align:center;
+    padding:35px 20px !important;
+    background:#d4edda !important;
+    color:#155724 !important;
+    border-radius:15px !important;
+    font-size:28px !important;
+    font-weight:bold;
+    z-index:99999 !important;
+    box-shadow:0 10px 30px rgba(0,0,0,.3);
+}
