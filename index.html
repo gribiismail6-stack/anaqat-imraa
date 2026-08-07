@@ -7,260 +7,304 @@
 
 <title>أناقة إمرأة</title>
 
-<link rel="stylesheet" href="style.css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
+<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
+<header>
 
-<header class="header">
+<div class="logo">
 
-<h1>أناقة إمرأة</h1>
+<h1>👗 أناقة إمرأة</h1>
 
-<p>
-أزياء نسائية عصرية تجمع بين الأناقة والجمال
-</p>
+<p>لأنك تستحقين الأناقة</p>
 
-</header>
-
-
+</div>
 
 <nav>
 
-<a href="#products">منتجاتنا</a>
+<a href="#home">الرئيسية</a>
+
+<a href="#products">المنتجات</a>
+
 <a href="#about">من نحن</a>
+
 <a href="#contact">اتصل بنا</a>
 
 </nav>
 
+</header>
 
+<section id="home" class="hero">
 
-<section class="hero">
+<div class="hero-image">
 
-<img src="https://via.placeholder.com/600x400"
-alt="أناقة إمرأة">
+<img src="images/product-main.jpg" alt="المنتج الرئيسي">
 
-<h2>
-تألقي بإطلالة مميزة
-</h2>
+</div>
 
-<button onclick="goProducts()">
-تسوقي الآن
-</button>
+<div class="hero-content">
+
+<h2>بيجامة نسائية تركية</h2>
+
+<div class="stars">
+
+★★★★★
+
+</div>
+
+<div class="price">
+
+<span class="new-price">2500 دج</span>
+
+<span class="old-price">3200 دج</span>
+
+</div>
+
+<p>
+
+بيجامة نسائية بخامة ناعمة وجودة ممتازة، مناسبة للاستعمال اليومي.
+
+</p>
+
+<a href="#order" class="btn">
+
+اطلبي الآن
+
+</a>
+
+</div>
 
 </section>
 
-
-
 <section id="products">
 
-<h2>
-منتجاتنا
+<h2 class="section-title">
+
+🛍️ منتجاتنا
+
 </h2>
 
-
 <div class="products-slider">
-
-
 <div class="product-card">
+    <img src="images/product1.jpg" alt="منتج 1">
 
-<img src="https://via.placeholder.com/300">
+    <h3>بيجامة نسائية</h3>
 
-<h3>
-بيجامة نسائية
-</h3>
+    <div class="stars">★★★★★</div>
 
-<p>
-السعر: 2500 دج
-</p>
+    <div class="price">
+        <span class="new-price">2500 دج</span>
+        <span class="old-price">3200 دج</span>
+    </div>
 
-<button onclick="buy('بيجامة نسائية')">
-اطلبي الآن
-</button>
-
+    <button onclick="buy('بيجامة نسائية')">
+        اطلبي الآن
+    </button>
 </div>
 
-
 <div class="product-card">
+    <img src="images/product2.jpg" alt="منتج 2">
 
-<img src="https://via.placeholder.com/300">
+    <h3>قميص نسائي</h3>
 
-<h3>
-قميص نسائي
-</h3>
+    <div class="stars">★★★★★</div>
 
-<p>
-السعر: 2000 دج
-</p>
+    <div class="price">
+        <span class="new-price">2200 دج</span>
+        <span class="old-price">2900 دج</span>
+    </div>
 
-<button onclick="buy('قميص نسائي')">
-اطلبي الآن
-</button>
-
+    <button onclick="buy('قميص نسائي')">
+        اطلبي الآن
+    </button>
 </div>
 
-
 <div class="product-card">
+    <img src="images/product3.jpg" alt="منتج 3">
 
-<img src="https://via.placeholder.com/300">
+    <h3>فستان صيفي</h3>
 
-<h3>
-فستان نسائي
-</h3>
+    <div class="stars">★★★★★</div>
 
-<p>
-السعر: 3500 دج
-</p>
+    <div class="price">
+        <span class="new-price">3500 دج</span>
+        <span class="old-price">4300 دج</span>
+    </div>
 
-<button onclick="buy('فستان نسائي')">
-اطلبي الآن
-</button>
-
+    <button onclick="buy('فستان صيفي')">
+        اطلبي الآن
+    </button>
 </div>
-
 
 </div>
 
 </section>
 <section id="about" class="about">
 
-<h2>من نحن</h2>
+    <h2 class="section-title">👗 من نحن</h2>
 
-<p>
-أناقة إمرأة متجر متخصص في الأزياء النسائية،
-نوفر لكِ أحدث التصاميم بجودة وأناقة مع خدمة توصيل لكل الولايات.
-</p>
+    <div class="about-box">
+
+        <p>
+            مرحبًا بكم في متجر <strong>أناقة إمرأة</strong>.
+        </p>
+
+        <p>
+            نقدم أحدث موديلات الملابس النسائية بجودة عالية وأسعار مناسبة مع التوصيل إلى جميع ولايات الجزائر.
+        </p>
+
+        <p>
+            هدفنا هو تقديم تجربة تسوق سهلة وآمنة مع خدمة عملاء مميزة.
+        </p>
+
+    </div>
 
 </section>
-
 
 <section id="contact" class="contact">
 
-<h2>اتصل بنا</h2>
+    <h2 class="section-title">📞 اتصل بنا</h2>
 
-<p>📱 واتساب: ضع رقمك هنا</p>
+    <div class="contact-box">
 
-<p>📘 فيسبوك: أناقة إمرأة</p>
+        <a href="#" class="contact-btn facebook">
+            Facebook
+        </a>
+
+        <a href="#" class="contact-btn whatsapp">
+            WhatsApp
+        </a>
+
+    </div>
 
 </section>
 
+<section id="order" class="order">
 
+    <h2 class="section-title">
+        📝 تأكيد الطلب
+    </h2>
 
-<section id="order" class="order-box">
+    <form id="orderForm">
 
-<h2>تأكيد الطلب</h2>
+        <input
+            type="hidden"
+            id="product"
+            name="product">
 
+        <input
+            type="text"
+            id="name"
+            placeholder="الاسم واللقب"
+            required>
 
-<img id="productImage"
-src="https://via.placeholder.com/300"
-alt="صورة المنتج">
+        <input
+            type="tel"
+            id="phone"
+            placeholder="رقم الهاتف"
+            required>
 
+        <select
+            id="wilaya"
+            required>
 
-<form id="orderForm">
-
-
-<input type="text" id="name" placeholder="الإسم واللقب" required>
-
-
-<input type="tel" id="phone" placeholder="رقم الهاتف" required>
-
-
-
-<select id="wilaya" required>
-
-<option value="">
-اختر الولاية
-</option>
-
-<option>أدرار</option>
-<option>الشلف</option>
-<option>الأغواط</option>
-<option>أم البواقي</option>
-<option>باتنة</option>
-<option>بجاية</option>
-<option>بسكرة</option>
-<option>بشار</option>
-<option>البليدة</option>
-<option>البويرة</option>
-<option>تمنراست</option>
-<option>تبسة</option>
-<option>تلمسان</option>
-<option>تيارت</option>
-<option>تيزي وزو</option>
-<option>الجزائر</option>
-<option>الجلفة</option>
-<option>جيجل</option>
-<option>سطيف</option>
-<option>سعيدة</option>
-<option>سكيكدة</option>
-<option>سيدي بلعباس</option>
-<option>عنابة</option>
-<option>قالمة</option>
-<option>قسنطينة</option>
-<option>المدية</option>
-<option>مستغانم</option>
-<option>المسيلة</option>
-<option>معسكر</option>
-<option>ورقلة</option>
-<option>وهران</option>
-<option>البيض</option>
-<option>إليزي</option>
-<option>برج بوعريريج</option>
-<option>بومرداس</option>
-<option>الطارف</option>
-<option>تندوف</option>
-<option>تيسمسيلت</option>
-<option>الوادي</option>
-<option>خنشلة</option>
-<option>سوق أهراس</option>
-<option>تيبازة</option>
-<option>ميلة</option>
-<option>عين الدفلى</option>
-<option>النعامة</option>
-<option>عين تموشنت</option>
-<option>غرداية</option>
-<option>غليزان</option>
-<option>تيميمون</option>
-<option>برج باجي مختار</option>
-<option>أولاد جلال</option>
-<option>بني عباس</option>
-<option>عين صالح</option>
-<option>عين قزام</option>
-<option>تقرت</option>
-<option>جانت</option>
-<option>المغير</option>
-<option>المنيعة</option>
+            <option value="">
+                اختر الولاية
+            </option>
+          <option>أدرار</option>
+          <option>الشلف</option>
+          <option>الأغواط</option>
+          <option>أم البواقي</option>
+          <option>باتنة</option>
+          <option>بجاية</option>
+          <option>بسكرة</option>
+          <option>بشار</option>
+          <option>البليدة</option>
+          <option>البويرة</option>
+          <option>تمنراست</option>
+          <option>تبسة</option>
+          <option>تلمسان</option>
+          <option>تيارت</option>
+          <option>تيزي وزو</option>
+          <option>الجزائر</option>
+          <option>الجلفة</option>
+          <option>جيجل</option>
+          <option>سطيف</option>
+          <option>سعيدة</option>
+          <option>سكيكدة</option>
+          <option>سيدي بلعباس</option>
+          <option>عنابة</option>
+          <option>قالمة</option>
+          <option>قسنطينة</option>
+          <option>المدية</option>
+          <option>مستغانم</option>
+          <option>المسيلة</option>
+          <option>معسكر</option>
+          <option>ورقلة</option>
+          <option>وهران</option>
+          <option>البيض</option>
+          <option>إليزي</option>
+          <option>برج بوعريريج</option>
+          <option>بومرداس</option>
+          <option>الطارف</option>
+          <option>تندوف</option>
+          <option>تيسمسيلت</option>
+          <option>الوادي</option>
+          <option>خنشلة</option>
+          <option>سوق أهراس</option>
+          <option>تيبازة</option>
+          <option>ميلة</option>
+          <option>عين الدفلى</option>
+          <option>النعامة</option>
+          <option>عين تموشنت</option>
+          <option>غرداية</option>
+          <option>غليزان</option>
+          <option>المغير</option>
+          <option>المنيعة</option>
+          <option>أولاد جلال</option>
+          <option>برج باجي مختار</option>
+          <option>بني عباس</option>
+          <option>تيميمون</option>
+          <option>تقرت</option>
+          <option>جانت</option>
+          <option>عين صالح</option>
 
 </select>
 
+<input
+type="text"
+id="address"
+placeholder="العنوان الكامل"
+required>
 
+<input
+type="number"
+id="quantity"
+placeholder="الكمية"
+value="1"
+min="1"
+required>
 
-<input type="text" id="address" placeholder="العنوان الكامل" required>
-
-
-<input type="number" id="quantity" placeholder="الكمية" value="1" required>
-
-
-
-<input type="hidden" id="product">
-
-
-
-<button type="submit">
-تأكيد الطلب
+<button type="submit" class="submit-btn">
+✅ تأكيد الطلب
 </button>
 
+<div id="successMessage" class="success-message">
+✅ تم إرسال طلبك بنجاح
+</div>
 
 </form>
 
-
-<!-- رسالة النجاح ستظهر هنا كنافذة فوق الاستمارة -->
-<div id="successMessage">
-✅ تم إرسال طلبك بنجاح
-<br>
-سنتصل بك قريباً
-</div>
-
-
 </section>
+
+<script src="script.js"></script>
+
+</body>
+</html>
