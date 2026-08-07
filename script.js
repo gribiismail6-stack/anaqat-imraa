@@ -1,9 +1,11 @@
 const scriptURL = "https://script.google.com/macros/s/AKfycbw4NNsXr8V4mjd-RzQVGpJJGgbukYESFjtmYGoOZ3rPd0m4eWrfK8jZZDdC9ZStfXHq/exec";
 
+document.addEventListener("DOMContentLoaded", function(){
+
 const form = document.getElementById("orderForm");
 const successMessage = document.getElementById("successMessage");
 
-form.addEventListener("submit", function(e) {
+form.addEventListener("submit", function(e){
 
     e.preventDefault();
 
@@ -17,23 +19,28 @@ form.addEventListener("submit", function(e) {
 
 
     fetch(scriptURL, {
-  method: "POST",
-  body: JSON.stringify(data)
-})
-.then(() => {
+        method: "POST",
+        body: JSON.stringify(data)
+    })
 
-    let msg = document.getElementById("successMessage");
+    .then(() => {
 
-    msg.style.display = "block";
-    msg.innerHTML = "✅ تم إرسال طلبك بنجاح";
+        successMessage.style.display = "block";
+        successMessage.innerHTML = "✅ تم إرسال طلبك بنجاح";
 
-    form.reset();
+        form.reset();
 
-    setTimeout(() => {
-        msg.style.display = "none";
-    }, 4000);
+        setTimeout(() => {
+            successMessage.style.display = "none";
+        }, 4000);
 
-})
-.catch(error => {
-    console.log(error);
+    })
+
+    .catch(error => {
+        console.log(error);
+        alert("حدث خطأ في الإرسال");
+    });
+
+});
+
 });
