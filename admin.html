@@ -1,33 +1,214 @@
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
+
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>لوحة إدارة - أناقة إمرأة</title>
 
-<link rel="stylesheet" href="admin.css">
+<title>إدارة المنتجات - أناقة إمرأة</title>
+
 <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700&display=swap" rel="stylesheet">
+
+<style>
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: Cairo, sans-serif;
+    background: #f7f3f5;
+    color: #333;
+}
+
+.admin-box {
+    width: 92%;
+    max-width: 500px;
+    margin: 40px auto;
+    background: white;
+    padding: 25px;
+    border-radius: 20px;
+    box-shadow: 0 5px 25px rgba(0,0,0,.1);
+}
+
+h1 {
+    text-align: center;
+    margin-bottom: 25px;
+}
+
+label {
+    display: block;
+    margin-top: 15px;
+    font-weight: 600;
+}
+
+input {
+    width: 100%;
+    padding: 13px;
+    margin-top: 7px;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    font-family: inherit;
+}
+
+button {
+    width: 100%;
+    padding: 14px;
+    margin-top: 20px;
+    border: none;
+    border-radius: 10px;
+    background: #b76e79;
+    color: white;
+    font-size: 16px;
+    font-family: inherit;
+    cursor: pointer;
+}
+
+button:disabled {
+    opacity: .6;
+}
+
+#preview {
+    display: none;
+    width: 100%;
+    max-height: 300px;
+    object-fit: contain;
+    margin-top: 20px;
+    border-radius: 15px;
+}
+
+#message {
+    text-align: center;
+    margin-top: 15px;
+    font-weight: 600;
+}
+</style>
+
 </head>
 
 <body>
 
-<div class="login-box">
+<div class="admin-box">
 
-    <h1>👗 لوحة إدارة</h1>
-    <p>أناقة إمرأة</p>
+<h1>👗 إدارة أناقة إمرأة</h1>
 
-    <input
-        type="password"
-        id="password"
-        placeholder="أدخل كلمة المرور">
+<label>اسم المنتج</label>
 
-    <button onclick="login()">
-        تسجيل الدخول
-    </button>
+<input
+    type="text"
+    id="productName"
+    placeholder="مثال: بيجامة نسائية">
+
+<label>السعر</label>
+
+<input
+    type="number"
+    id="productPrice"
+    placeholder="مثال: 2500">
+
+<label>صورة المنتج</label>
+
+<input
+    type="file"
+    id="productImage"
+    accept="image/*">
+
+<img id="preview" alt="معاينة المنتج">
+
+<button id="uploadButton">
+    ☁️ رفع المنتج
+</button>
+
+<div id="message"></div>
 
 </div>
 
-<script src="admin.js"></script>
+<script>
+
+const CLOUD_NAME = "qeka2qzu";
+const UPLOAD_PRESET = "anaqa_products";
+
+const imageInput = document.getElementById("productImage");
+const preview = document.getElementById("preview");
+const uploadButton = document.getElementById("uploadButton");
+const message = document.getElementById("message");
+
+imageInput.addEventListener("change", function () {
+
+    const file = this.files[0];
+
+    if (!file) return;
+
+    preview.src = URL.createObjectURL(file);
+    preview.style.display = "block";
+
+});
+
+uploadButton.addEventListener("click", async function () {
+
+    const name = document.getElementById("productName").value.trim();
+    const price = document.getElementById("productPrice").value.trim();
+    const file = imageInput.files[0];
+
+    if (!name) {
+        alert("اكتب اسم المنتج");
+        return;
+    }
+
+    if (!price) {
+        alert("اكتب سعر المنتج");
+        return;
+    }
+
+    if (!file) {
+        alert("اختر صورة المنتج");
+        return;
+    }
+
+    uploadButton.disabled = true;
+    uploadButton.textContent = "⏳ جاري الرفع...";
+    message.textContent = "";
+
+    const formData = new FormData();
+
+    formData.append("file", file);
+    formData.append("upload_preset", UPLOAD_PRESET);
+
+    try {
+
+        const response = await fetch(
+            `https://api.cloudinary.com/v1_1/${CLOUD_NAME}/image/upload`,
+            {
+                method: "POST",
+                body: formData
+            }
+        );
+
+        const data = await response.json();
+
+        if (!data.secure_url) {
+            throw new Error("فشل رفع الصورة");
+        }
+
+        console.log("اسم المنتج:", name);
+        console.log("السعر:", price);
+        console.log("رابط الصورة:", data.secure_url);
+
+        message.textContent = "✅ تم رفع الصورة بنجاح";
+
+    } catch (error) {
+
+        console.error(error);
+        message.textContent = "❌ حدث خطأ أثناء رفع الصورة";
+
+    }
+
+    uploadButton.disabled = false;
+    uploadButton.textContent = "☁️ رفع المنتج";
+
+});
+
+</script>
 
 </body>
 </html>
